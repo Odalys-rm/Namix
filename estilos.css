@@ -402,224 +402,113 @@ footer {
     transform: scale(1.05);
 }
 
+/* ADAPTACION PARA CELULARES */
 
-
-
-
-
-
-
-/* =================================
-   NAMIX - DISEÑO RESPONSIVO
-   ADAPTACIÓN A TODOS LOS DISPOSITIVOS
-================================= */
-
-* {
-    box-sizing: border-box;
-}
-
-html {
+html, body {
     width: 100%;
-    overflow-x: hidden;
-}
-
-body {
-    width: 100%;
-    min-width: 0;
-    margin: 0;
+    max-width: 100%;
     overflow-x: hidden;
 }
 
 img, video, iframe {
     max-width: 100%;
+    height: auto;
 }
 
-/* TABLETS Y PANTALLAS MEDIANAS */
-
-@media screen and (max-width: 900px) {
-
-    .encabezado {
-        width: 100%;
-        padding: 12px;
-    }
+@media screen and (max-width: 850px) {
 
     .contenedor {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         width: 100%;
-        min-width: 0;
     }
 
     .barra-lateral {
-        width: 27%;
-        flex: 0 0 27%;
-        min-width: 0;
-        padding: 10px;
+        width: 100%;
+        flex: none;
     }
 
     .contenido {
-        width: 73%;
-        flex: 1;
-        min-width: 0;
-        padding: 12px;
-    }
-
-    .contenido img {
-        width: 100%;
-        height: auto;
-    }
-}
-
-/* CELULARES */
-
-@media screen and (max-width: 600px) {
-
-    .encabezado {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: nowrap;
-        padding: 8px;
-        gap: 5px;
-    }
-
-    .logo img {
-        width: clamp(35px, 12vw, 60px);
-        height: auto;
-    }
-
-    .boton-registro {
-        padding: 7px 10px;
-        font-size: clamp(10px, 3vw, 14px);
-        white-space: nowrap;
-    }
-
-    /* MENU SIEMPRE A LA IZQUIERDA */
-
-    .contenedor {
-        display: flex;
-        flex-direction: row;
-        align-items: stretch;
-        width: 100%;
-        min-width: 0;
-    }
-
-    .barra-lateral {
-        width: 29%;
-        flex: 0 0 29%;
-        min-width: 0;
-        padding: 6px;
-    }
-
-    .barra-lateral h2 {
-        font-size: clamp(11px, 3.5vw, 17px);
-        text-align: center;
-    }
-
-    .genero {
         width: 100%;
         max-width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    .genero summary {
-        font-size: clamp(9px, 2.8vw, 13px);
-        padding: 8px 5px;
-    }
-
-    .genero li {
-        font-size: clamp(9px, 2.7vw, 13px);
-    }
-
-    /* CONTENIDO MUSICAL A LA DERECHA */
-
-    .contenido {
-        width: 71%;
-        flex: 1 1 0;
         min-width: 0;
-        padding: 8px;
-        overflow: hidden;
+        padding: 15px;
     }
 
-    .contenido h1 {
-        font-size: clamp(16px, 4.5vw, 23px);
+    .bienvenida {
+        width: 100%;
+        min-width: 0;
+        padding: 20px;
     }
 
-    .contenido h2 {
-        font-size: clamp(14px, 4vw, 20px);
+    .tarjetas {
+        grid-template-columns: 1fr;
     }
 
+    .tarjeta {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .contenido h1,
+    .contenido h2,
     .contenido h3 {
-        font-size: clamp(12px, 3.5vw, 17px);
+        max-width: 100%;
+        overflow-wrap: anywhere;
     }
 
-    .contenido p {
-        font-size: clamp(10px, 3vw, 15px);
-    }
-
-    .contenido img {
+    .contenido img,
+    .contenido video,
+    .contenido iframe {
         display: block;
         width: 100%;
         max-width: 100%;
         height: auto;
-        object-fit: contain;
+        margin: 15px auto;
     }
 
-    .contenido video,
-    .contenido iframe {
-        width: 100%;
-        max-width: 100%;
+    .bienvenida h1 {
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
     }
-
-    .contenido .tarjeta {
-        width: 100%;
-        max-width: 100%;
-        min-width: 0;
-    }
-
-    .contenido button {
-        max-width: 100%;
-        font-size: clamp(10px, 3vw, 14px);
-    }
-
-}
-
-/* CELULARES MUY PEQUEÑOS */
-
-@media screen and (max-width: 360px) {
-
-    .barra-lateral {
-        width: 31%;
-        flex-basis: 31%;
-        padding: 4px;
-    }
-
-    .contenido {
-        width: 69%;
-        padding: 5px;
-    }
-
-    .genero summary {
-        font-size: 10px;
-    }
-
-    .barra-lateral h2 {
-        font-size: 12px;
-    }
-
-}
-
-video {
-    width: 90%;
-    max-width: 800px;
-    border-radius: 12px;
 }
 
 
-img, video {
+/* CENTRAR CONTENIDO */
+
+.contenido {
+    text-align: center;
+}
+
+.bienvenida {
+    justify-content: center;
+    text-align: center;
+}
+
+.descripcion {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tarjetas {
+    justify-items: center;
+}
+
+.tarjeta {
+    text-align: center;
+}
+
+.contenido img,
+.contenido video,
+.contenido iframe {
     display: block;
-    max-width: 100%;
-    height: auto;
-    margin: 20px auto;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+
+
+
+
+
+
+       
