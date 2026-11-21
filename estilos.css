@@ -609,3 +609,17 @@ img, video, iframe {
     }
 
 }
+
+video {
+    width: 90%;
+    max-width: 800px;
+    border-radius: 12px;
+}
+
+
+img, video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto;
+}
