@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Namix</title>
+  <link rel="stylesheet" href="estilos_2.css">
+</head>
+<body>
+
+  <header class="encabezado">
+    <a href="index.html" class="logo">namix</a></font>
+    
+  </header>
+
+  <div class="contenedor">
+
+    <!-- Menú de géneros -->
+    <aside class="menu" aria-label="Géneros">
+      <h2>Géneros</h2>
+
+ <a href="index.html"><section class="genero">
+        <button type="button" class="genero-titulo" aria-expanded="true">
+          <span><center><b><font color="ff000">Inicio</span></center></b></font>
+        </button></a>
+        
+      </section>
+      
+
+      <section class="genero">
+        <button type="button" class="genero-titulo" aria-expanded="true">
+          <span>Pop urbano</span><span class="signo">–</span>
+        </button>
+        <ul class="genero-lista">
+          <li><a href="paulo_londra.html">Paulo Londra</a></li>
+          <li><a href="manuel turizo.html">Manuel Turizo</a></li>
+        </ul>
+      </section>
+
+      <section class="genero">
+        <button type="button" class="genero-titulo" aria-expanded="true">
+          <span>Regional Mexicano</span><span class="signo">–</span>
+        </button>
+        <ul class="genero-lista">
+          <li><a href="carin leon.html">Carin León</a></li>
+          <li><a href="natanael.html">Natanael Cano</a></li>
+        </ul>
+      </section>
+
+      <section class="genero">
+        <button type="button" class="genero-titulo" aria-expanded="true">
+          <span>Rock</span><span class="signo">–</span>
+        </button>
+        <ul class="genero-lista">
+          <li><a href="queen.html">Queen</a></li>
+          <li><a href="mana.html">Maná</a></li>
+        </ul>
+      </section>
+
+      <section class="genero">
+        <button type="button" class="genero-titulo" aria-expanded="true">
+          <span>K-pop</span><span class="signo">–</span>
+        </button>
+        <ul class="genero-lista">
+          <li><a href="bts.html">BTS</a></li>
+        </ul>
+      </section>
+    </aside>
+
+    <!-- Zona principal: aquí estaba la imagen, ahora va el formulario -->
+    <main class="principal" id="registro">
+      <div class="tarjeta">
+        <h1>Crea tu Cuenta</h1>
+
+        <form id="formulario" novalidate autocomplete="off">
+
+          <div class="campo">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" placeholder="Nombre" maxlength="100">
+            <small class="error" id="error-nombre" aria-live="polite"></small>
+          </div>
+
+          <div class="campo">
+            <label for="paterno">Apellido paterno:</label>
+            <input type="text" id="paterno" placeholder="Apellido paterno" maxlength="100">
+            <small class="error" id="error-paterno" aria-live="polite"></small>
+          </div>
+
+          <div class="campo">
+            <label for="materno">Apellido materno:</label>
+            <input type="text" id="materno" placeholder="Apellido materno" maxlength="100">
+            <small class="error" id="error-materno" aria-live="polite"></small>
+          </div>
+
+          <div class="campo">
+            <label for="edad">Edad:</label>
+            <input type="text" id="edad" placeholder="Edad" maxlength="3" inputmode="numeric">
+            <small class="error" id="error-edad" aria-live="polite"></small>
+          </div>
+
+          <div class="campo">
+            <label for="dia">Fecha de nacimiento:</label>
+            <div class="fecha">
+              <select id="dia" aria-label="Día"><option value="">Día</option></select>
+              <select id="mes" aria-label="Mes"><option value="">Mes</option></select>
+              <select id="anio" aria-label="Año"><option value="">Año</option></select>
+            </div>
+            <small class="error" id="error-fecha" aria-live="polite"></small>
+          </div>
+
+          <div class="campo">
+            <label for="tarjeta">Número de tarjeta:</label>
+            <input type="text" id="tarjeta" placeholder="16 dígitos" maxlength="16" inputmode="numeric">
+            <small class="error" id="error-tarjeta" aria-live="polite"></small>
+          </div>
+
+          <div class="campo">
+            <label for="email">Correo electrónico:</label>
+            <input type="text" id="email" placeholder="usuario@gmail.com" maxlength="200" inputmode="email" autocapitalize="off">
+            <small class="error" id="error-email" aria-live="polite"></small>
+          </div>
+
+          <button type="submit" id="validar" disabled>Validar</button>
+          <p class="ayuda" id="ayuda">Completa todos los campos para poder validar.</p>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <!-- Cuadro de notificación -->
+  <div class="fondo-modal" id="modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+      <h2 id="modal-titulo"></h2>
+      <p id="modal-texto"></p>
+      <button type="button" id="modal-cerrar">Aceptar</button>
+    </div>
+  </div>
+
+  <script src="script_3.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrarse | NAMIX</title>
+  <link rel="stylesheet" href="registro.css">
+</head>
+<body>
+  <header class="barra-superior">
+    <a class="marca" href="index.html">na<span>mix</span></a>
+    <a class="volver" href="index.html">← Volver a Namix</a>
+  </header>
+
+  <main class="contenedor">
+    <section class="tarjeta-formulario">
+      <p class="etiqueta">BIENVENIDO A NAMIX</p>
+      <h1>Crear una cuenta</h1>
+      <p class="introduccion">Completa tus datos para registrarte.</p>
+
+      <form id="formulario" novalidate>
+        <div class="campo">
+          <label for="nombre">Nombre</label>
+          <input id="nombre" name="nombre" type="text" maxlength="100"
+            autocomplete="given-name" placeholder="Escribe tu nombre" required>
+          <small class="error" id="error-nombre"></small>
+        </div>
+
+        <div class="campo">
+          <label for="paterno">Apellido paterno</label>
+          <input id="paterno" name="paterno" type="text" maxlength="100"
+            autocomplete="family-name" placeholder="Escribe tu apellido paterno" required>
+          <small class="error" id="error-paterno"></small>
+        </div>
+
+        <div class="campo">
+          <label for="materno">Apellido materno</label>
+          <input id="materno" name="materno" type="text" maxlength="100"
+            placeholder="Escribe tu apellido materno" required>
+          <small class="error" id="error-materno"></small>
+        </div>
+
+        <div class="campo">
+          <label for="edad">Edad</label>
+          <input id="edad" name="edad" type="text" inputmode="numeric"
+            maxlength="3" placeholder="Ej. 16" required>
+          <small class="error" id="error-edad"></small>
+        </div>
+
+        <div class="campo">
+          <label for="telefono">Número de teléfono</label>
+          <input id="telefono" name="telefono" type="tel" inputmode="numeric"
+            maxlength="12" placeholder="111 222 3333" autocomplete="tel" required>
+          <small class="error" id="error-telefono"></small>
+        </div>
+
+        <div class="campo">
+          <label for="email">Correo electrónico</label>
+          <input id="email" name="email" type="email" maxlength="161"
+            placeholder="ejemplo@dominio.com" autocomplete="email"
+            autocapitalize="off" spellcheck="false" required>
+          <small class="error" id="error-email"></small>
+        </div>
+
+        <button id="botonValidar" type="submit" disabled>Validar datos</button>
+      </form>
+    </section>
+  </main>
+
+  <div id="notificacion" class="notificacion" role="status" aria-live="polite">
+    <strong>¡Datos Correctos!</strong>
+    <span>Tus datos han sido guardados</span>
+  </div>
+
+  <script src="registro.js"></script>
+</body>
+</html>
