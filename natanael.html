@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NATANAEL CANO</title>
+  <link rel="stylesheet" href="estilos-2.css">
+  <style>
+  .nx-menu,
+.nx-menu * { box-sizing: border-box; }
+
+/* Panel escondido a la izquierda; solo asoma una pestañita */
+.nx-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 103vh;
+  padding: 18px 38px 20px 12px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  color: #fff;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(180deg, rgba(42, 32, 96, 0.97), rgba(19, 15, 31, 0.97));
+  border-right: 2px solid rgba(167, 139, 250, 0.5);
+  border-radius: 0 18px 18px 0;
+  transform: translateX(calc(-100% + 26px));
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Icono de la pestañita */
+.nx-menu::after {
+  content: "☰";
+  position: absolute;
+  top: 24px;
+  right: 0;
+  width: 26px;
+  text-align: center;
+  font-size: 1.2rem;
+  transition: opacity 0.2s;
+}
+
+/* Al pasar el mouse, el menú sale */
+.nx-menu:hover,
+.nx-menu:focus-within {
+  transform: translateX(0);
+  box-shadow: 8px 0 30px rgba(0, 0, 0, 0.55);
+}
+
+.nx-menu:hover::after,
+.nx-menu:focus-within::after { opacity: 0; }
+
+.nx-titulo-menu {
+  margin: 0;
+  padding: 0 4px;
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+
+.nx-genero {
+  margin: 0;
+  background: rgba(19, 15, 31, 0.75);
+  border: 1px solid rgba(167, 139, 250, 0.35);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.nx-boton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 46px;
+  margin: 0;
+  padding: 0 14px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(90deg, #5b46b8, #8a3a63);
+  cursor: pointer;
+  list-style: none;
+}
+
+.nx-boton::-webkit-details-marker { display: none; }
+.nx-boton::marker { content: ""; }
+.nx-boton::after { content: "–"; }
+.nx-genero:not([open]) .nx-boton::after { content: "+"; }
+.nx-boton:hover { filter: brightness(1.15); }
+
+.nx-lista { margin: 0; padding: 6px 0; list-style: none; }
+.nx-lista li { margin: 0; padding: 0; }
+
+.nx-lista a {
+  display: block;
+  height: 38px;
+  line-height: 38px;
+  padding: 0 14px 0 20px;
+  font-size: 0.92rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nx-lista a:hover { background: rgba(255, 255, 255, 0.1); }
+@media(max-width: 600px){
+  .contenedor {padding-left: 56;}
+}
+</style>
+</head>
+<body>
+<aside class="nx-menu" aria-label="Géneros">
+   
+
+     <a href="index.html"> <summary class="nx-boton">INICIO</summary></a>
+
+    <details class="nx-genero" open>
+      <summary class="nx-boton">Pop urbano</summary>
+      <ul class="nx-lista">
+        <li><a href="paulo_londra.html">Paulo Londra</a></li>
+        <li><a href="manuel turizo.html">Manuel Turizo</a></li>
+      </ul>
+    </details>
+
+    <details class="nx-genero" open>
+      <summary class="nx-boton">Regional Mexicano</summary>
+      <ul class="nx-lista">
+        <li><a href="carin leon.html">Carin León</a></li>
+        <li><a href="natanael.html">Natanael Cano</a></li>
+      </ul>
+    </details>
+
+    <details class="nx-genero" open>
+      <summary class="nx-boton">Rock</summary>
+      <ul class="nx-lista">
+        <li><a href="queen.html">Queen</a></li>
+        <li><a href="mana.html">Maná</a></li>
+      </ul>
+    </details>
+
+
+
+    <details class="nx-genero" open>
+      <summary class="nx-boton">K-pop</summary>
+      <ul class="nx-lista">
+        <li><a href="bts.html">BTS</a></li>
+      </ul>
+    </details>
+
+
+    <details class="nx-genero" open>
+      <summary class="nx-boton">ELECTRONICA</summary>
+      <ul class="nx-lista">
+        <li><a href="marshmello.html">marshmello</a></li>
+        <li><a href="alan.html">Alan Walker</a></li>
+      </ul>
+    </details>
+  </aside>
+
+  
+
+  <main class="contenedor">
+
+    
+    <section class="perfil-artista">
+      <div class="tarjeta-foto">
+        <img src="natanael.jpg">
+      </div>
+
+      
+      <h1>NATANAEL CANO  </h1>
+      
+    </section>
+
+    <section class="seccion-canciones">
+      <div class="encabezado-canciones">
+        <h2>...Sus canciones...</h2>
+        
+      </div>
+
+      <div class="cuadricula-canciones">
+        <article class="tarjeta-cancion">
+          <div class="mini-portada portada-2"><img src="blanca.webp" height="70" width="70"></div>
+          <div class="datos-cancion">
+            <h3> BLANCANIEVES</h3>
+            <p>Natanael Cano</p>
+          </div>
+          <audio class="audio" controls>
+            <source src="audio_1.cano.mp3" type="audio/mp3">
+          </audio>
+        </article>
+
+
+        <article class="tarjeta-cancion">
+          <div class="mini-portada portada-2"><img src="alta.webp" height="70" width="70"></div>
+          <div class="datos-cancion">
+            <h3>MAS ALTAS QUE BAJADAS</h3>
+            <p>Natanael Cano</p>
+          </div>
+          <audio class="audio" controls>
+            <source src="audio_2.cano.mp3" type="audio/mp3">
+          </audio>
+        </article>
+
+
+        <article class="tarjeta-cancion">
+          <div class="mini-portada portada-2"><img src="mar.webp" height="70" width="70"></div>
+          <div class="datos-cancion">
+            <h3> MAR AZUL </h3>
+            <p>Natanael Cano</p>
+          </div>
+          <audio class="audio" controls>
+            <source src="audio_3.cano.mp3" type="audio/mp3">
+          </audio>
+        </article>
+
+        
+
+        <article class="tarjeta-cancion">
+          <div class="mini-portada portada-2"><img src="mevoy.webp" height="70" width="70"></div>
+          <div class="datos-cancion">
+            <h3> O ME VOY O TE VAS </h3>
+            <p>Natanael cano</p>
+          </div>
+          <audio class="audio" controls>
+            <source src="audio_4.cano.mp3" type="audio/mp3">
+          </audio>
+        </article>
+
+          
+      <article class="tarjeta-cancion">
+          <div class="mini-portada portada-2"><img src="madona.webp" height="70" width="70"></div>
+          <div class="datos-cancion">
+            <h3> MADONNA</h3>
+            <p>Natanael Cano</p>
+          </div>
+          <audio class="audio" controls>
+            <source src="audio_5.cano.mp3" type="audio/mp3">
+          </audio>
+        </article>
+        
+        <article class="tarjeta-cancion">
+          <div class="mini-portada portada-2"><img src="pre.webp" height="70" width="70"></div>
+          <div class="datos-cancion">
+            <h3> PRESIDENTE </h3>
+            <p>Natanael Cano</p>
+          </div>
+          <audio class="audio" controls>
+            <source src="audio_6.cano.mp3" type="audio/mp3">
+          </audio>
+        </article>
+
+        <article class="tarjeta-cancion">
+          <div class="mini-portada portada-2"><img src="amor.webp" height="70" width="70"></div>
+          <div class="datos-cancion">
+            <h3> AMOR TUMBADO</h3>
+            <p>Natanael Cano</p>
+          </div>
+          <audio class="audio" controls>
+            <source src="audio_7.cano.mp3" type="audio/mp3">
+          </audio>
+        </article>
+
+  <article class="tarjeta-cancion">
+          <div class="mini-portada portada-2"><img src="angel.webp" height="70" width="70"></div>
+          <div class="datos-cancion">
+            <h3> MI BELLO ANGEL </h3>
+            <p>Natanael Cano</p>
+          </div>
+          <audio class="audio" controls>
+            <source src="audio_8.cano.mp3" type="audio/mp3">
+          </audio>
+        </article>
+
+
+
+
+</body>
+</html>
