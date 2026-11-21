@@ -1,0 +1,241 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --morado: #9636c9;
+  --morado-claro: #d9a4f5;
+  --rojo: #e52b45;
+  --fondo: #09070c;
+  --tarjeta: #19131f;
+  --texto: #faf6fc;
+  --suave: #c1b4ca;
+}
+
+body {
+  min-height: 100vh;
+  padding: 30px 0 55px;
+  color: var(--texto);
+  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(ellipse at 12% 0%, #37104f 0, transparent 28%),
+    radial-gradient(ellipse at 95% 38%, #4b0c20 0, transparent 25%),
+    var(--fondo);
+}
+
+.contenedor {
+  width: 88%;
+  max-width: 1120px;
+  margin: auto;
+}
+
+/* FOTO GRANDE Y NOMBRE DEBAJO, FUERA DE LA TARJETA */
+.perfil-artista {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 43px;
+}
+
+.tarjeta-foto {
+  position: relative;
+  width: 290px;
+  height: 290px;
+  padding: 9px;
+  border: 2px solid var(--morado);
+  border-radius: 20px;
+  background: linear-gradient(145deg, #351044, #170e20 65%, #64152b);
+  box-shadow: 0 0 32px #9636c966, 0 16px 38px #000b;
+}
+
+.tarjeta-foto img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.cambiar-foto {
+  position: absolute;
+  right: 17px;
+  bottom: 17px;
+  padding: 8px 12px;
+  border-radius: 18px;
+  color: white;
+  background: #17101ddd;
+  border: 1px solid var(--morado-claro);
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.cambiar-foto input,
+.boton-audio input {
+  display: none;
+}
+
+.perfil-artista h1 {
+  margin-top: 17px;
+  color: var(--morado-claro);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(30px, 4vw, 43px);
+  letter-spacing: 1px;
+  text-decoration: underline;
+  text-decoration-color: var(--rojo);
+  text-underline-offset: 8px;
+}
+
+.subtitulo {
+  margin-top: 14px;
+  color: var(--suave);
+  font-size: 10px;
+  letter-spacing: 4px;
+}
+
+/* TARJETAS DE CANCIONES CON EL AUDIO DENTRO */
+.seccion-canciones {
+  margin-top: 10px;
+}
+
+.encabezado-canciones {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 18px;
+}
+
+.encabezado-canciones h2 {
+  color: white;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 25px;
+}
+
+.encabezado-canciones p {
+  color: var(--suave);
+  font-size: 11px;
+  text-align: right;
+}
+
+.cuadricula-canciones {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.tarjeta-cancion {
+  display: grid;
+  grid-template-columns: 68px 1fr;
+  align-items: center;
+  gap: 10px 13px;
+  padding: 14px;
+  border: 1px solid #54266b;
+  border-radius: 14px;
+  background: linear-gradient(115deg, #281637, #17111d 75%);
+  box-shadow: 0 7px 20px #0008;
+  transition: .2s;
+}
+
+.tarjeta-cancion:nth-child(even) {
+  border-color: #852438;
+  background: linear-gradient(115deg, #3b1425, #17111d 75%);
+}
+
+.tarjeta-cancion:hover {
+  transform: translateY(-3px);
+  border-color: var(--morado-claro);
+}
+
+.mini-portada {
+  grid-column: 1;
+  grid-row: 1;
+  width: 68px;
+  height: 68px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  color: white;
+  font-family: Georgia, serif;
+  font-size: 23px;
+  font-weight: bold;
+  box-shadow: inset 0 0 22px #0005;
+}
+
+.portada-1 { background: linear-gradient(135deg, #8d3bc2, #e52b45); }
+.portada-2 { background: linear-gradient(135deg, #e52b45, #351044); }
+.portada-3 { background: linear-gradient(135deg, #4e176e, #bd4dce); }
+.portada-4 { background: linear-gradient(135deg, #8f1736, #271033); }
+.portada-5 { background: linear-gradient(135deg, #bd70e4, #57143d); }
+.portada-6 { background: linear-gradient(135deg, #311044, #e52b45); }
+
+.datos-cancion {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+}
+
+.datos-cancion h3 {
+  overflow: hidden;
+  color: white;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.datos-cancion p {
+  margin-top: 6px;
+  color: var(--suave);
+  font-size: 11px;
+}
+
+.boton-audio {
+  grid-column: 1 / -1;
+  justify-self: start;
+  padding: 7px 12px;
+  border-radius: 18px;
+  color: white;
+  background: var(--rojo);
+  font-size: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.boton-audio:hover {
+  background: #ff4059;
+}
+
+.audio {
+  grid-column: 1 / -1;
+  display: block;
+  width: 100%;
+  height: 34px;
+  accent-color: var(--morado);
+}
+
+@media (max-width: 700px) {
+  .contenedor { width: 92%; }
+  .cuadricula-canciones { grid-template-columns: 1fr; }
+  .encabezado-canciones {
+    align-items: start;
+    flex-direction: column;
+  }
+  .encabezado-canciones p { text-align: left; }
+}
+
+@media (max-width: 420px) {
+  body { padding-top: 20px; }
+  .tarjeta-foto { width: 235px; height: 235px; }
+  .tarjeta-cancion { grid-template-columns: 58px 1fr; padding: 11px; }
+  .mini-portada { width: 58px; height: 58px; }
+}
+}
+.submenu ul{
+  display: none;
+}
+.submenu:hover ul{
+  display: block;
+}

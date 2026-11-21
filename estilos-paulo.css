@@ -1,0 +1,194 @@
+/* ===== BASE Y FONDO ===== */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: #fff;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background:
+    radial-gradient(ellipse 60% 55% at 100% 55%, rgba(160, 40, 52, 0.55), transparent 70%),
+    radial-gradient(ellipse 70% 60% at 0% 0%, #4b3a9c, transparent 70%),
+    #130f1f;
+  background-attachment: fixed;
+}
+
+/* ===== MENÚ LATERAL ===== */
+.nx-menu {
+  position: fixed;
+  top: 24px;
+  left: 14px;
+  width: 210px;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.nx-titulo-menu {
+  margin: 0;
+  padding: 0 4px;
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+
+.nx-genero {
+  margin: 0;
+  background: rgba(19, 15, 31, 0.75);
+  border: 1px solid rgba(167, 139, 250, 0.35);
+  border-radius: 14px;
+  overflow: hidden;
+  backdrop-filter: blur(4px);
+}
+
+.nx-boton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 46px;
+  margin: 0;
+  padding: 0 14px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(90deg, #5b46b8, #8a3a63);
+  cursor: pointer;
+  list-style: none;
+}
+
+.nx-boton::-webkit-details-marker { display: none; }
+.nx-boton::after { content: "–"; }
+.nx-genero:not([open]) .nx-boton::after { content: "+"; }
+.nx-boton:hover { filter: brightness(1.15); }
+.nx-boton:focus-visible { outline: 3px solid #ff5a36; outline-offset: -3px; }
+
+.nx-lista { margin: 0; padding: 6px 0; list-style: none; }
+.nx-lista li { margin: 0; padding: 0; }
+
+.nx-lista a {
+  display: block;
+  height: 38px;
+  line-height: 38px;
+  padding: 0 14px 0 20px;
+  font-size: 0.92rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nx-lista a:hover { background: rgba(255, 255, 255, 0.1); }
+
+/* ===== CONTENIDO (deja espacio al menú) ===== */
+.pagina {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 24px 60px 250px;
+}
+
+/* ===== ARTISTA ===== */
+.artista {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 56px;
+}
+
+.marco-foto {
+  width: 280px;
+  aspect-ratio: 1 / 1.03;
+  padding: 8px;
+  border: 4px solid transparent;
+  border-radius: 28px;
+  background:
+    linear-gradient(#1a1530, #1a1530) padding-box,
+    linear-gradient(135deg, #a78bfa 0%, #a78bfa 55%, #c0394f 100%) border-box;
+  box-shadow: 0 0 36px rgba(167, 139, 250, 0.45);
+}
+
+.marco-foto img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.artista h1 {
+  margin: 26px 0 0;
+  padding-bottom: 4px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 3.2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #d9c8ff;
+  border-bottom: 5px solid #ff4d2e;
+  text-shadow: 0 0 18px rgba(167, 139, 250, 0.5);
+}
+
+/* ===== CANCIONES ===== */
+.canciones h2 {
+  margin: 0 0 22px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.rejilla {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.cancion {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 14px 16px;
+  align-items: center;
+  padding: 18px 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(167, 139, 250, 0.55);
+  background: linear-gradient(135deg, rgba(110, 96, 200, 0.55), rgba(27, 22, 50, 0.85));
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* Las tarjetas de la columna derecha llevan tono rojo */
+.cancion:nth-child(even) {
+  border-color: rgba(200, 70, 90, 0.7);
+  background: linear-gradient(135deg, rgba(150, 50, 80, 0.6), rgba(27, 22, 50, 0.85));
+}
+
+.portada {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.datos h3 {
+  margin: 0 0 6px;
+  font-family: "Arial Black", "Segoe UI", Arial, sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: -0.5px;
+}
+
+.datos p { margin: 0; font-size: 0.9rem; }
+
+.cancion audio {
+  grid-column: 1 / -1;
+  width: 100%;
+  height: 46px;
+  border-radius: 999px;
+}
+
+/* ===== PANTALLAS PEQUEÑAS ===== */
+@media (max-width: 1100px) {
+  .nx-menu { position: static; width: auto; max-height: none; margin: 16px; }
+  .pagina { padding: 16px 20px 50px; }
+}
+
+@media (max-width: 760px) {
+  .rejilla { grid-template-columns: 1fr; }
+  .artista h1 { font-size: 2.2rem; }
+}
